@@ -2,8 +2,6 @@
 /**
  * Server-side render callback for Featured Posts Grid.
  *
- * This file is loaded from the explicit render_callback in the main plugin file.
- *
  * @package FeaturedPostsGrid
  */
 
@@ -14,10 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'dfpg_sanitize_css_value' ) ) {
 	/**
 	 * Sanitize a CSS value stored in block attributes.
-	 *
-	 * Dev note:
-	 * These values come from editor controls such as UnitControl and BoxControl.
-	 * We keep this intentionally simple and still escape again before output.
 	 *
 	 * @param mixed $value CSS value.
 	 * @return string
@@ -34,10 +28,6 @@ if ( ! function_exists( 'dfpg_sanitize_css_value' ) ) {
 if ( ! function_exists( 'dfpg_get_card_style_attribute' ) ) {
 	/**
 	 * Build inline styles for each post card.
-	 *
-	 * Dev note:
-	 * Card padding and border are applied directly to each repeated card.
-	 * Native block supports would target the wrapper, which is wrong for this block.
 	 *
 	 * @param array $attributes Block attributes.
 	 * @return string
@@ -225,20 +215,18 @@ ob_start();
 			<article class="dfpg-card"<?php echo $card_style ? ' style="' . esc_attr( $card_style ) . '"' : ''; ?>>
 				<?php if ( $show_featured_image && $thumbnail_id ) : ?>
 					<figure class="dfpg-card-image">
-						<a href="<?php echo esc_url( $post_url ); ?>" aria-label="<?php echo esc_attr( $post_title ); ?>">
-							<?php
-							// Dev note: loading and decoding are explicit for clarity, although WordPress may add them automatically.
-							echo get_the_post_thumbnail(
-								$post_id,
-								$image_size,
-								array(
-									'alt'      => esc_attr( $image_alt ),
-									'loading'  => 'lazy',
-									'decoding' => 'async',
-								)
-							);
-							?>
-						</a>
+						<?php
+						// The brief only requires the post title to be linked.
+						echo get_the_post_thumbnail(
+							$post_id,
+							$image_size,
+							array(
+								'alt'      => $image_alt,
+								'loading'  => 'lazy',
+								'decoding' => 'async',
+							)
+						);
+						?>
 					</figure>
 				<?php endif; ?>
 
