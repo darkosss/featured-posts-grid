@@ -1,0 +1,71 @@
+.wp-block-pedldigitl-featured-posts-grid {
+	.dfpg-empty-state {
+		padding: 2rem;
+		border: 1px dashed #ccc;
+		text-align: center;
+		color: #555;
+		background: #fafafa;
+	}
+
+	.dfpg-empty-state p {
+		margin: 0;
+	}
+
+	.dfpg-card {
+		box-sizing: border-box;
+	}
+}
+
+.dfpg-editor-help {
+	margin-top: 0.5rem;
+	color: #757575;
+}
+
+.dfpg-selected-posts {
+	display: grid;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.dfpg-selected-post {
+	display: grid;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	border: 1px solid #ddd;
+	background: #fff;
+}
+
+.dfpg-selected-post span {
+	font-weight: 500;
+}
+
+.dfpg-selected-post-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.dfpg-control-group {
+	margin-bottom: 1rem;
+}
+
+.dfpg-control-group:last-child {
+	margin-bottom: 0;
+}
+
+.dfpg-control-group .components-base-control {
+	margin-bottom: 0;
+}
+
+.dfpg-control-group .components-base-control__label,
+.dfpg-control-group .components-input-control__label {
+	margin-bottom: 0.5rem;
+}
+
+.components-tools-panel .dfpg-control-group {
+	padding-top: 0.5rem;
+}
+
+.components-tools-panel .components-tools-panel-item + .components-tools-panel-item {
+	margin-top: 0.75rem;
+}

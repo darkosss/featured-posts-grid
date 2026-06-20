@@ -1,0 +1,116 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pedldigitl/featured-posts-grid",
+	"version": "1.0.0",
+	"title": "Featured Posts Grid",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Display selected posts in a responsive featured posts grid.",
+	"textdomain": "featured-posts-grid",
+	"attributes": {
+		"postIds": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "number"
+			}
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"imageAspectRatio": {
+			"type": "string",
+			"default": "4-3"
+		},
+		"imageSize": {
+			"type": "string",
+			"default": "large"
+		},
+		"excerptClamp": {
+			"type": "string",
+			"default": "none"
+		},
+		"titleFontSize": {
+			"type": "string"
+		},
+		"titleFontWeight": {
+			"type": "string"
+		},
+		"titleLineHeight": {
+			"type": "string"
+		},
+		"titleLetterSpacing": {
+			"type": "string"
+		},
+		"titleTextTransform": {
+			"type": "string"
+		},
+		"excerptFontSize": {
+			"type": "string"
+		},
+		"excerptFontWeight": {
+			"type": "string"
+		},
+		"excerptLineHeight": {
+			"type": "string"
+		},
+		"excerptLetterSpacing": {
+			"type": "string"
+		},
+		"excerptTextTransform": {
+			"type": "string"
+		},
+		"rowGap": {
+			"type": "string",
+			"default": "1.5rem"
+		},
+		"columnGap": {
+			"type": "string",
+			"default": "1.5rem"
+		},
+		"cardPadding": {
+			"type": "object",
+			"default": {}
+		},
+		"cardBorder": {
+			"type": "object",
+			"default": {}
+		},
+		"cardBorderRadius": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		},
+		{
+			"name": "borderless",
+			"label": "Borderless"
+		}
+	],
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,18 @@
+{
+	"name": "featured-posts-grid",
+	"version": "1.0.0",
+	"description": "A dynamic Gutenberg block plugin for selecting and displaying featured posts in a responsive grid.",
+	"private": true,
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"make-pot": "wp i18n make-pot . languages/featured-posts-grid.pot --exclude=node_modules,build"
+	},
+	"devDependencies": {
+		"@wordpress/icons": "^14.0.1",
+		"@wordpress/scripts": "^30.0.0"
+	}
+}
